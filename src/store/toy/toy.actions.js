@@ -1,6 +1,6 @@
 import { toyService } from "../../services/toy.service"
 import { store } from "../store";
-import { REMOVE_TOY , SET_TOYS, SET_FILTER} from "./toy.reducer";
+import { REMOVE_TOY ,EDIT_TOY, ADD_TOY, SET_TOYS, SET_FILTER} from "./toy.reducer";
 import { showErrorMsg } from "../../services/event-bus.service";
 
 
@@ -10,10 +10,8 @@ export async function loadToys() {
 
     try {
         const filterBy = store.getState().toyModule.filterBy
-        console.log('action', filterBy)
 
         const toys = await toyService.query(filterBy)
-        console.log('action', toys)
         store.dispatch({ type: SET_TOYS, toys })
     } catch (err) {
         console.log('Having issues with loading toys:', err)
@@ -33,4 +31,15 @@ export async function removeToy(toyId) {
 
 export function setFilterBy(filterBy) {
     store.dispatch({ type: SET_FILTER, filterBy })
+}
+
+export async function saveToy(toyToSave) {
+    try {
+        const type = toyToSave.id ? EDIT_TOY : ADD_TOY
+        const toy = await toyService.save(toyToSave)
+        store.dispatch({ type, toy })
+    } catch (err) {
+        console.log('Having issues saving toy:', err)
+        throw err
+    }
 }

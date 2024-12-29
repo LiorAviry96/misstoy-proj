@@ -41,13 +41,13 @@ export default function ToyIndex() {
     function onSetFilterBy(filterBy) {
         setFilterBy(filterBy)
     }
-    console.log('index', toys)
+    //console.log('index', toys)
     return (
         <section className="toy-index">
             <h1>Welcome! this is our toys</h1>
             <ToyFilter onSetFilterBy={onSetFilterByDebounce} filterBy={{}} />
 
-            <Link to='/toy/edit'>Add Robot</Link>
+            <Link to='/toy/edit'>Add Toy</Link>
             <ToyList toys={toys} onRemoveToy={onRemoveToy} />
             <Outlet />
         </section>

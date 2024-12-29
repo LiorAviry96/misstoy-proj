@@ -15,7 +15,7 @@ export function ToyFilter({ filterBy, onSetFilterBy }) {
     function handleChange({ target }) {
         const field = target.name
         let value = target.value
-        console.log('field:', field)
+       // console.log('field:', field)
 
 
         switch (target.type) {
@@ -40,7 +40,7 @@ export function ToyFilter({ filterBy, onSetFilterBy }) {
 
     const { price, name } = filterByToEdit
     return (
-        <form className="robot-filter">
+        <form className="toy-filter">
             <section>
                 <label htmlFor="name">Name</label>
                 <input value={name} name="name" id="name" onChange={handleChange} />

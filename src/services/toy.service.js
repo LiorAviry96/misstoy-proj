@@ -21,33 +21,26 @@ function query(filterBy = {}) {
         console.log('All toys from storage', toys);  // Check toys fetched from storage
         let filteredToys = toys; // Create a new variable
         
-        console.log('Initial filtered toys:', filteredToys);
-
         if (filterBy.name) {
             const regExp = new RegExp(filterBy.name, 'i');
             filteredToys = filteredToys.filter(toy => regExp.test(toy.name));
-            console.log('Filtered by name:', filteredToys);
         }
     
         if (filterBy.price) {
             filteredToys = filteredToys.filter(toy => toy.price >= filterBy.price);
-            console.log('Filtered by price:', filteredToys);
         }
     
         if (filterBy.inStock !== "") {
             filteredToys = filteredToys.filter(toy =>
                 filterBy.inStock ? toy.inStock : !toy.inStock
             );
-            console.log('Filtered by inStock:', filteredToys);
         }
 
         if (filterBy.sort) {
             if (filterBy.sort === 'name') {
                 filteredToys = filteredToys.sort((a, b) => a.name.localeCompare(b.name));
-                console.log('Sorted by name:', filteredToys);
             } else if (filterBy.sort === 'createdAt') {
                 filteredToys = filteredToys.sort((a, b) => a.createdAt - b.createdAt);
-                console.log('Sorted by createdAt:', filteredToys);
             }
         }
         

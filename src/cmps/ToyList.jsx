@@ -5,7 +5,7 @@ import { ToyPreview } from "./ToyPreview";
 
 
 export function ToyList({ toys, onRemoveToy }) {
-    console.log(toys)
+    //console.log(toys)
     return (
         <ul className="toy-list">
             {toys?.map(toy => (
@@ -13,7 +13,7 @@ export function ToyList({ toys, onRemoveToy }) {
                     <ToyPreview toy={toy} />
                     <section className="toy-actions">
                         <button onClick={() => onRemoveToy(toy.id)}>X</button>
-                        <Link style={{ color: 'white' }} to={`/toy/edit/${toy.id}`}>Edit</Link>
+                        <Link style={{ color: 'black' }} to={`/toy/edit/${toy.id}`}>Edit</Link>
                     </section>
                 </li>
             ))}
