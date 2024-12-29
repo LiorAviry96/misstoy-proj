@@ -65,7 +65,7 @@ export default function ToyEdit() {
 
     return (
         <section className="toy-edit">
-            <Link to="/toy"><button className="close-btn">X</button></Link>
+            <Link to="/toy"><button className="close-btn">Back to toys</button></Link>
             <h1>{toyId ? 'Edit' : 'Add'} Toy</h1>
             <form onSubmit={onSubmitToy}>
                 <label htmlFor="name">Name</label>

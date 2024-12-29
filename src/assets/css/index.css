@@ -1,0 +1,26 @@
+
+
+/* Pages */
+@import "./pages/home.scss";
+@import "./pages/toyIndex.scss";
+@import "./pages/toyEdit.scss";
+@import "./pages/toyDetails.scss";
+
+/* Components */
+@import "./cmps/toyList.scss";
+@import "./cmps/toyPreview.scss";
+@import "./cmps/toyFilter.scss";
+
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #a3a1a1;
+    color: #333;
+}

@@ -1,0 +1,27 @@
+.toy-filter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+}
+
+.toy-filter input,
+.toy-filter select,
+.toy-filter button {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+.toy-filter button {
+    background-color: #ae8ce1;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.toy-filter button:hover {
+    background-color: #2e65a4;
+}
