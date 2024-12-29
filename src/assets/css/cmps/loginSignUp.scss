@@ -1,0 +1,64 @@
+/* LoginSignup Styles */
+.login-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 50px auto;
+}
+
+.login-page .btn-link {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.login-page .btn-link:hover {
+    color: #0056b3;
+}
+
+.login-form,
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.login-form select,
+.signup-form input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.login-form button,
+.signup-form button {
+    background-color: #462b68;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-form button:hover,
+.signup-form button:hover {
+    background-color: #5f3c72;
+}
+
+.signup-section {
+    margin-top: 20px;
+}

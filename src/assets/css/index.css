@@ -10,6 +10,8 @@
 @import "./cmps/toyList.scss";
 @import "./cmps/toyPreview.scss";
 @import "./cmps/toyFilter.scss";
+@import "./cmps/appHeader.scss";
+@import "./cmps/loginSignUp.scss";
 
 
 /* Global Styles */

@@ -18,7 +18,7 @@ _createToys()
 function query(filterBy = {}) {
     return storageService.query(STORAGE_KEY)
     .then(toys => {
-        console.log('All toys from storage', toys);  // Check toys fetched from storage
+    //    console.log('All toys from storage', toys);  // Check toys fetched from storage
         let filteredToys = toys; 
         
         if (filterBy.name) {

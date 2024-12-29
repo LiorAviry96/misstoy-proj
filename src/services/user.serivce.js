@@ -39,19 +39,28 @@ async function update(userToUpdate) {
     return updatedUser
 }
 
-async function login(userCred) {
-    const users = await storageService.query(STORAGE_KEY_USER_DB)
-    const user = users.find(user => user.username === userCred.username)
-    if (user) {
-        return saveLocalUser(user)
-    }
+
+
+function login({ username }) {
+    return storageService.query(STORAGE_KEY_USER_DB)
+        .then(users => {
+            const user = users.find(user => user.username === username)
+            if (user) return saveLocalUser(user)
+            else return Promise.reject('Invalid login')
+        })
 }
 
-async function signup(userCred) {
-    userCred.balance = 10000
-    if (!userCred.imgUrl) userCred.imgUrl = 'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png'
-    const user = await storageService.post('user', userCred)
-    return saveLocalUser(user)
+
+async function signup({ username, password, fullname, isAdmin }) {
+    const user = {
+        username,
+        password,
+        fullname,
+        isAdmin
+    }
+    return storageService.post(STORAGE_KEY_USER_DB, user)
+        .then(saveLocalUser(user))
+
 }
 
 async function logout() {
@@ -59,7 +68,7 @@ async function logout() {
 }
 
 function saveLocalUser(user) {
-    user = { id: user.id, fullname: user.fullname, balance: user.balance }
+    user = { id: user.id, fullname: user.fullname, isAdmin: user.isAdmin }
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
     return user
 }
@@ -73,5 +82,6 @@ function getEmptyUser() {
         username: '',
         fullname: '',
         password: '',
+        idAdmin: '',
     }
 }
