@@ -11,6 +11,12 @@ export function ToyPreview({ toy }) {
                 <h2>{toy.name}</h2>
                 <h4>Price: {toy.price}</h4>
                 <h4>In Stock: {toy.inStock}</h4>
+                <h4>Labels:</h4>
+                <ul>
+                    {toy.labels.map((lab, index) => (
+                        <li key={index}>{lab}</li>
+                    ))}
+                </ul>
             </Link>
         </article>
     )

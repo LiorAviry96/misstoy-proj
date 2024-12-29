@@ -19,7 +19,7 @@ function query(filterBy = {}) {
     return storageService.query(STORAGE_KEY)
     .then(toys => {
         console.log('All toys from storage', toys);  // Check toys fetched from storage
-        let filteredToys = toys; // Create a new variable
+        let filteredToys = toys; 
         
         if (filterBy.name) {
             const regExp = new RegExp(filterBy.name, 'i');
@@ -30,12 +30,16 @@ function query(filterBy = {}) {
             filteredToys = filteredToys.filter(toy => toy.price >= filterBy.price);
         }
     
-        if (filterBy.inStock !== "") {
+       if (filterBy.inStock !== "") {
             filteredToys = filteredToys.filter(toy =>
                 filterBy.inStock ? toy.inStock : !toy.inStock
             );
         }
-
+            if (filterBy.labels && filterBy.labels.length) {
+                filteredToys = filteredToys.filter(toy =>
+                    filterBy.labels.every(label => toy.labels.includes(label))
+                );
+            }
         if (filterBy.sort) {
             if (filterBy.sort === 'name') {
                 filteredToys = filteredToys.sort((a, b) => a.name.localeCompare(b.name));

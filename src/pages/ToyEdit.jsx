@@ -32,12 +32,20 @@ export default function ToyEdit() {
             case 'checkbox':
                 value = target.checked
                 break
-
+            case 'select-one':
+                  if (field === 'inStock') {
+                 value = value === "true"; // Convert string to boolean
+            }
+            break;
+            case "select-multiple":
+                value = Array.from(target.selectedOptions).map(option => option.value);
+                break;
+                
 
             default: break
         }
 
-        setToy((toy) => ({ ...toy, [field]: value }))
+        setToy((toy) => ({ ...toy, [field]: value }));
     }
 
     async function loadToys() {
@@ -75,12 +83,12 @@ export default function ToyEdit() {
                 <input onChange={handleChange} value={price} type="number" id="price" name="price" />
 
                 <label htmlFor="inStock">In Stock</label>
-                <select onChange={handleChange} value={inStock} id="inStock" name="inStock"  >
+                <select onChange={handleChange} value={inStock} id="inStock" name="inStock">
                     <option disabled value="">Choose</option>
-                    <option value="inStock">TRUE</option>
-                    <option value="outStock">FALSE</option>
-                    
+                    <option value={true}>TRUE</option>
+                    <option value={false}>FALSE</option>
                 </select>
+
               
                 <section className="btns">
                     <button className="btn">Save</button>
