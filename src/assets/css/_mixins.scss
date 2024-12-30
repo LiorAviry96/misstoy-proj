@@ -1,0 +1,18 @@
+/** Mixins */
+@mixin box-shadow($intensity: 0.1) {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, $intensity);
+    transition: $transition;
+  }
+  
+  @mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @mixin responsive-text($size-small: 1rem, $size-large: 1.5rem) {
+    font-size: $size-small;
+    @media (min-width: 768px) {
+      font-size: $size-large;
+    }
+  }

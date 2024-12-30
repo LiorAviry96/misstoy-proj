@@ -1,5 +1,8 @@
 
 
+@import "mixins";
+@import "variables";
+
 /* Pages */
 @import "./pages/home.scss";
 @import "./pages/toyIndex.scss";
@@ -13,16 +16,3 @@
 @import "./cmps/appHeader.scss";
 @import "./cmps/loginSignUp.scss";
 
-
-/* Global Styles */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-}
-
-body {
-    background-color: #a3a1a1;
-    color: #333;
-}

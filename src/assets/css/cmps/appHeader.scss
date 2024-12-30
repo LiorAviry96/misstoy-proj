@@ -1,9 +1,13 @@
 /* AppHeader Styles */
 .app-header {
-    background-color: #462b68;
+    background-color: #6e2060;
     color: white;
     padding: 20px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%; // Full width for header
+    display: flex;
+    flex-direction: column;
+
 }
 
 .app-header h1 {
@@ -12,13 +16,14 @@
     text-align: center;
 }
 
+
 .app-header .container {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
+    display: flex;
+    flex-direction: column; // Ensure elements inside are stacked vertically
+    width: 100%;
 }
 
 .app-header nav {

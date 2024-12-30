@@ -1,37 +1,51 @@
 .toy-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 1em;
-    background: var(--background);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 1em;
+  list-style: none;
+
+  ul{
     list-style: none;
+    
+  }
 }
-
-.toy-list li {
-    background: var(--card-bg);
+  li {
+    background: $card-bg;
     padding: 1em;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.toy-list li:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-
-
-button {
     margin: 0.5em;
-    padding: 0.5em 1em;
-    background: var(--primary);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
+    border-radius: $border-radius;
+    @include box-shadow();
 
-button:hover {
-    background: var(--secondary);
+    &:hover {
+      transform: translateY(-5px);
+      @include box-shadow(0.2);
+    }
+
+    .toy-actions {
+      margin-top: 10px;
+      button {
+        margin: 0.5em;
+        padding: 0.5em 1em;
+        background: $primary-color;
+        color: white;
+        border: none;
+        border-radius: $border-radius;
+        transition: background $transition;
+
+        &:hover {
+          background: $secondary-color;
+        }
+      }
+
+      a {
+        color: $text-color;
+        transition: color $transition;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    
+  }
 }

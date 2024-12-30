@@ -2,7 +2,7 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import { Suspense, lazy } from 'react';
 import { Home } from './pages/Home';
 import { UserMsg } from './cmps/userMsg';
-import "./assets/css/index.css";
+import "./assets/css/main.scss";
 import { AppHeader } from './cmps/AppHeader';
 import { ThemeProvider } from './contexts/ThemeContext';
 
@@ -21,30 +21,27 @@ function withSuspense(Cmp, fallback = <div >Loading...</div>) {
 }
 
 function App() {
-
-    return (
-        <Router>
-            <section className='main-app'>
-            <ThemeProvider>
-                <AppHeader/>
-                    <main className='container'>
-                        <Routes>
-                            <Route path="/" element={<Home />} />
-                            <Route path="/about" element={withSuspense(About)} />
-                            <Route path="/toy" element={withSuspense(ToyIndex)} />
-                              <Route path='/toy/edit/:toyId?' element={withSuspense(ToyEdit)} />
-                            <Route path="/toy/:toyId" element={withSuspense(ToyDetails)} />
-
-                        </Routes>
-                    </main>
-                    <UserMsg />
-                 </ThemeProvider>
-
-            </section>
-        </Router >
-
-    )
+  return (
+      <Router>
+          <section className='main-app'>
+              <ThemeProvider>
+                  <AppHeader /> {/* Header */}
+                  <main className='container'>
+                      <Routes>
+                          <Route path="/" element={<Home />} />
+                          <Route path="/about" element={withSuspense(About)} />
+                          <Route path="/toy" element={withSuspense(ToyIndex)} />
+                          <Route path="/toy/edit/:toyId?" element={withSuspense(ToyEdit)} />
+                          <Route path="/toy/:toyId" element={withSuspense(ToyDetails)} />
+                      </Routes>
+                  </main>
+                  <UserMsg /> {/* User messages */}
+              </ThemeProvider>
+          </section>
+      </Router>
+  );
 }
+
 
 export default App
 

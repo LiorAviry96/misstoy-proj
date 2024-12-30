@@ -1,0 +1,28 @@
+
+
+:root{
+$primary-color: #a273d1;
+$secondary-color: #271935;
+$card-bg: #f9f9f9;
+$hover-bg: rgba(0, 0, 0, 0.15);
+$text-color: #333;
+$accent-color: #007bff;
+$accent-hover-color: #0056b3;
+$border-radius: 8px;
+$transition: 0.3s ease;
+}
+
+
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #a3a1a1;
+    color: #333;
+}

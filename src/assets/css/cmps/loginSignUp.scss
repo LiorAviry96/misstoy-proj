@@ -1,13 +1,12 @@
 /* LoginSignup Styles */
 .login-page {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     padding: 30px;
     background-color: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     max-width: 400px;
+    display: flex;
     margin: 50px auto;
 }
 
@@ -28,7 +27,6 @@
 .login-form,
 .signup-form {
     display: flex;
-    flex-direction: column;
     gap: 15px;
     width: 100%;
 }

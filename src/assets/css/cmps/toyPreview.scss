@@ -1,44 +1,43 @@
 .toy-preview {
-    width: 100%;
-    max-width: 250px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
     text-align: center;
-    background-color: #f9f9f9;
-}
-
-.toy-preview:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-}
-
-.toy-preview h2 {
-    font-size: 1.2rem;
-    margin: 10px 0;
-}
-
-.toy-preview h4 {
-    font-size: 1rem;
-    color: #462b68;
-}
-
-.toy-preview a {
-    color: #271935;
-    font-size: 1rem;
-    font-weight: bold;
-    text-align: center;
-    transition: color 0.3s ease;
-}
-
-.toy-preview a:hover {
-    color: #4e217b;
-}
-
-
-@media (max-width: 768px) {
-
-    .toy-preview {
-        max-width: 100%;
+    width: 100%; // Each preview takes full width    padding: 10px;
+    border: 1px solid lighten($card-bg, 20%);
+    border-radius: $border-radius;
+    background-color: $card-bg;
+    transition: transform $transition, box-shadow $transition;
+  
+    &:hover {
+      transform: translateY(-5px);
+      @include box-shadow(0.15);
     }
-}
+  
+    h2 {
+      color: $primary-color;
+      @include responsive-text(1rem, 1.2rem);
+      margin: 10px 0;
+    }
+  
+    h4 {
+      color: $secondary-color;
+      @include responsive-text(0.9rem, 1rem);
+    }
+  
+    a {
+      color: $text-color;
+      font-weight: bold;
+      transition: color $transition;
+  
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
+  /** Media Queries */
+@media (max-width: 768px) {
+    .toy-preview {
+      max-width: 100%;
+    }
+  
+  }
+  

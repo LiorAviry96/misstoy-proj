@@ -1,8 +1,23 @@
-.toy-index a{
-    color: white;
-    border: 1px white solid;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+.toy-index {
+    padding: $padding-base;
+    width: 100%; // Full width for the toy index section
+    padding: 1rem;
+    a {
+      color: $primary-color;
+      padding: $padding-base;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+       
+        color: $card-bg;
+      }
+    }
+  }
+
+  .add-toy{
+    background-color: $primary-color;
+    color: $card-bg !important;
+  }
+  

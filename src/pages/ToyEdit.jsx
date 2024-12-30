@@ -6,7 +6,6 @@ import { saveToy } from "../store/toy/toy.actions";
 export default function ToyEdit() {
 
     const [toy, setToy] = useState(toyService.createToy())
-
     const navigate = useNavigate()
     const { toyId } = useParams()
 

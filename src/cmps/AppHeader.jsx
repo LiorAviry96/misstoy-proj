@@ -10,7 +10,7 @@ import { ThemeContext } from '../contexts/ThemeContext.jsx'
 export function AppHeader() {
     const user = useSelector(storeState => storeState.userModule.user)
     const navigate = useNavigate()
-
+    console.log('user App header',user)
     const { theme } = useContext(ThemeContext)
 
 
@@ -62,6 +62,10 @@ export function AppHeader() {
         <header className={`app-header ${theme}`}>
             <section className="container">
                 <h1>Toys</h1>
+                <div>
+                {user &&    <h2>Hello {user.fullname}</h2> }
+                        </div>
+
                 <button onClick={() => navigate(-1)}>Back</button>
                 <nav>
                     <NavLink to='/' >Home</NavLink>

@@ -47,7 +47,7 @@ export default function ToyIndex() {
             <h1>Welcome! this is our toys</h1>
             <ToyFilter onSetFilterBy={onSetFilterByDebounce} filterBy={{}} />
 
-            <Link to='/toy/edit'>Add Toy</Link>
+            <Link className='add-toy' to='/toy/edit'>Add Toy</Link>
             <ToyList toys={toys} onRemoveToy={onRemoveToy} />
             <Outlet />
         </section>
